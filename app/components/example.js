@@ -10,11 +10,12 @@ export default function Example() {
     alert("Form is valid!");
   };
   return (
-    <div className="container m-auto py-10">
+    <div className="container m-auto py-10 px-4">
       <FormRenderer
         fieldsConstant={fieldsConstant}
         handleSubmit={handleSubmit}
         submitButtonName="Submit"
+        showClearButton
       />
     </div>
   );

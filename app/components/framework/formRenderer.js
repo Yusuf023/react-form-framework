@@ -17,6 +17,7 @@ export default function FormRenderer({
   handleSubmit,
   submitButtonName,
   submitButtonClasses,
+  showClearButton,
 }) {
   const [formState, setFormState] = useState({
     formData: {},
@@ -24,6 +25,16 @@ export default function FormRenderer({
     regexErrors: {},
   });
   const [fields, setFields] = useState(fieldsConstant);
+
+  const onClearClick = (e) => {
+    e.preventDefault();
+    setFormState({
+      formData: {},
+      requiredErrors: {},
+      regexErrors: {},
+    });
+    setFields(fieldsConstant);
+  };
 
   /**
    * Add another instance of the section by pushing another instance to the instances array of the section object.
@@ -209,17 +220,29 @@ export default function FormRenderer({
             />
           )
         )}
+        <div className="col-span-12">
+          <button
+            type="submit"
+            className={
+              submitButtonClasses
+                ? submitButtonClasses
+                : "px-4 py-2 w-full font-medium md:w-auto md:min-w-24 rounded border focus:border-blue-400 focus:outline-none focus:ring-2 bg-custom-darkBlue text-white hover:opacity-95"
+            }
+          >
+            {submitButtonName}
+          </button>
+          {showClearButton && (
+            <button
+              className={
+                "px-4 py-2 w-full font-medium md:w-auto md:min-w-24 my-2 md:my-0 md:ml-2 rounded border focus:border-blue-400 focus:outline-none focus:ring-2 bg-custom-lightGray text-black hover:bg-neutral-200"
+              }
+              onClick={(e) => onClearClick(e)}
+            >
+              Clear
+            </button>
+          )}
+        </div>
       </div>
-      <button
-        type="submit"
-        className={
-          submitButtonClasses
-            ? submitButtonClasses
-            : "px-4 py-2 rounded border focus:border-blue-400 focus:outline-none focus:ring-2 bg-custom-darkBlue text-white hover:opacity-95"
-        }
-      >
-        {submitButtonName}
-      </button>
     </form>
   );
 }
