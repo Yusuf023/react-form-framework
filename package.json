@@ -1,0 +1,31 @@
+{
+  "name": "react-form-framework",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.3.0",
+    "@mui/material": "^6.3.0",
+    "lodash": "^4.17.21",
+    "next": "^14.2.21",
+    "react": "^18",
+    "react-datepicker": "^7.5.0",
+    "react-dom": "^18",
+    "react-icons": "^5.3.0",
+    "react-select": "^5.9.0",
+    "react-text-mask": "^5.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}

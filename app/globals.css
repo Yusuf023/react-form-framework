@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  line-height: 1.5;
+}
+
+.react-select-container .react-select__control--is-focused {
+  @apply border border-blue-400 ring-2;
+}
+
+.react-select-error .react-select__control {
+  @apply border-red-500 hover:border-red-500;
+}
+
+.react-select-error .react-select__control--is-focused {
+  @apply border-red-500 ring-red-300;
+}
+
+.react-select-container .react-select__control--is-disabled {
+  @apply border-gray-300 bg-gray-100;
+}
+
+.react-select-container .react-select__value-container {
+  @apply px-4 py-1;
+}
+
+.react-select-container
+  .react-select__value-container
+  .react-select__placeholder {
+  @apply text-gray-400;
+}
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+  @apply !fill-white;
+}
+
+.react-datepicker,
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  @apply !bg-white border border-gray-300 rounded-lg shadow-md p-1 !font-sans;
+}
+
+.react-datepicker__month-container {
+  @apply !bg-white;
+}
+
+.react-datepicker__header {
+  @apply !bg-white !border-b-0 border-gray-300 rounded-t-lg py-2;
+}
+
+.react-datepicker__header__dropdown {
+  @apply my-1;
+}
+
+.react-datepicker__year-option:has(
+    .react-datepicker__navigation--years-previous
+  ),
+.react-datepicker__year-option:has(
+    .react-datepicker__navigation--years-upcoming
+  ) {
+  @apply !p-1 hover:bg-white;
+}
+
+.react-datepicker__navigation--years-previous,
+.react-datepicker__navigation--years-upcoming {
+  border-color: #ccc !important;
+  border-style: solid !important;
+  border-width: 3px 3px 0 0 !important;
+  content: "";
+  height: 9px !important;
+  width: 9px !important;
+  top: 0 !important;
+}
+
+.react-datepicker__navigation--years-previous {
+  transform: rotate(135deg);
+}
+
+.react-datepicker__navigation--years-upcoming {
+  transform: rotate(316deg);
+}
+
+.react-datepicker__year-option:hover
+  .react-datepicker__navigation--years-previous,
+.react-datepicker__year-option:hover
+  .react-datepicker__navigation--years-upcoming {
+  border-color: #a5a5a5 !important;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
